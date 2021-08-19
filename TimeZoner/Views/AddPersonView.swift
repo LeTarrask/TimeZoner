@@ -10,6 +10,8 @@ import SwiftUI
 
 
 struct AddPersonView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @ObservedObject var manager: TimeManager
     
     @State private var name: String = ""
@@ -35,6 +37,8 @@ struct AddPersonView: View {
                             let person = Person(name: name, timezone: timezone, color: color)
                             manager.persons.append(person)
                         }
+                        
+                        presentationMode.wrappedValue.dismiss()
                     }
                 }
             }
