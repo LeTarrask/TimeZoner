@@ -81,6 +81,13 @@ struct ZoneChooser: View {
             // TO DO: Fix this on iOS 15
 //            .searchable(text: $searchText)
 
+            
+//            #if os(macOS)
+//    .listStyle(SidebarListStyle())
+//    #else
+//    .navigationViewStyle(DefaultNavigationViewStyle())
+//    #endif
+            
         } else {
             List {
                 ForEach(searchResults, id: \.self) { zone in
