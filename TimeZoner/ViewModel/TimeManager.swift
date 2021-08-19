@@ -9,4 +9,6 @@ import SwiftUI
 
 class TimeManager: ObservableObject {
     @Published var persons: [Person] = []
+    
+    // TO DO: Permanent Storage
 }
