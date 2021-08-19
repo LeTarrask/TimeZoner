@@ -11,6 +11,7 @@ struct Person: Identifiable {
     public let id: UUID = UUID()
     var name: String
     var timezone: TimeZone
+    var color: Color
 }
 
 

@@ -5,7 +5,6 @@
 //  Created by tarrask on 19/08/2021.
 //
 
-import Foundation
 import SwiftUI
 
 
@@ -13,9 +12,9 @@ struct Watch_Preview: PreviewProvider {
     static var previews: Watch {
         let manager = TimeManager()
         let testPersons: [Person] = [
-            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!),
-            Person(name: "Cotey", timezone: TimeZone(identifier: "America/Chicago") ?? TimeZone(identifier: "GMT")!),
-            Person(name: "Mikee", timezone: TimeZone(identifier: "America/Los_Angeles") ?? TimeZone(identifier: "GMT")!)
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red),
+            Person(name: "Cotey", timezone: TimeZone(identifier: "America/Chicago") ?? TimeZone(identifier: "GMT")!, color: .blue),
+            Person(name: "Mikee", timezone: TimeZone(identifier: "America/Los_Angeles") ?? TimeZone(identifier: "GMT")!, color: .green)
         ]
         
         manager.persons = testPersons
@@ -70,7 +69,7 @@ struct Watch: View {
                 ForEach(manager.persons) { person in
                     Hand(offSet: 40)
                         .fill()
-                        .foregroundColor(.blue)
+                        .foregroundColor(person.color)
                         .frame(width: 4, alignment: .center)
                         .rotationEffect(.radians(getAngleFromTimezone(timezone: person.timezone)))
                 }
