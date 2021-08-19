@@ -29,6 +29,8 @@ struct MainView: View {
                 .sheet(isPresented: $addPerson, content: {
                     AddPersonView(manager: manager)
                 })
+            
+            Spacer()
         }
     }
 }
