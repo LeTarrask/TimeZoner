@@ -12,6 +12,7 @@
 		79762A7026CE636A00186733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79762A6F26CE636A00186733 /* Assets.xcassets */; };
 		79762A7326CE636A00186733 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79762A7226CE636A00186733 /* Preview Assets.xcassets */; };
 		79762A7B26CE637500186733 /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A7A26CE637500186733 /* Watch.swift */; };
+		79762A7D26CE704D00186733 /* TimezoneList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A7C26CE704D00186733 /* TimezoneList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		79762A7226CE636A00186733 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79762A7426CE636A00186733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79762A7A26CE637500186733 /* Watch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
+		79762A7C26CE704D00186733 /* TimezoneList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimezoneList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				79762A6B26CE635E00186733 /* TimeZonerApp.swift */,
 				79762A6D26CE635E00186733 /* ContentView.swift */,
 				79762A7A26CE637500186733 /* Watch.swift */,
+				79762A7C26CE704D00186733 /* TimezoneList.swift */,
 				79762A6F26CE636A00186733 /* Assets.xcassets */,
 				79762A7426CE636A00186733 /* Info.plist */,
 				79762A7126CE636A00186733 /* Preview Content */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79762A7D26CE704D00186733 /* TimezoneList.swift in Sources */,
 				79762A6E26CE635E00186733 /* ContentView.swift in Sources */,
 				79762A7B26CE637500186733 /* Watch.swift in Sources */,
 				79762A6C26CE635E00186733 /* TimeZonerApp.swift in Sources */,
