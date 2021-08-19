@@ -91,7 +91,6 @@ struct Watch: View {
                     .rotationEffect(.radians(minuteAngle))
                 
                 //Second hand
-                
                 // TO DO: fix the 59 to 0 second animation bug
                 Hand(offSet: 5)
                     .fill()
