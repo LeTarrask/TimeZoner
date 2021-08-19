@@ -66,38 +66,14 @@ struct Watch: View {
             }
             
             // MARK: Extra hand testing
-            // TO DO: instead of hard coding, need to draw hands from each of the manager.persons in manager
             Group {
-                //Extra hand
-                Hand(offSet: 40)
-                    .fill()
-                    .foregroundColor(.blue)
-                    .frame(width: 4, alignment: .center)
-                    .rotationEffect(.radians(getHourAngle(hour: 11-5, minute: 29)))
-                
                 ForEach(manager.persons) { person in
-                    let zone = person.timezone
-                    
                     Hand(offSet: 40)
                         .fill()
-                        .foregroundColor(.red)
+                        .foregroundColor(.blue)
                         .frame(width: 4, alignment: .center)
-                        .rotationEffect(.radians(getHourAngle(hour: 0, minute: 0)))
+                        .rotationEffect(.radians(getAngleFromTimezone(timezone: person.timezone)))
                 }
-                
-//                //Extra hand
-//                Hand(offSet: 40)
-//                    .fill()
-//                    .foregroundColor(.red)
-//                    .frame(width: 4, alignment: .center)
-//                    .rotationEffect(.radians(getHourAngle(hour: 11-6, minute: 29)))
-//
-//                //Extra hand
-//                Hand(offSet: 40)
-//                    .fill()
-//                    .foregroundColor(.green)
-//                    .frame(width: 4, alignment: .center)
-//                    .rotationEffect(.radians(getHourAngle(hour: 11-9, minute: 29)))
             }
             
             // MARK: Regular watch hands
@@ -134,7 +110,7 @@ struct Watch: View {
     }
     
     func start() {
-        Timer.scheduledTimer(withTimeInterval: 1 /*3*/, repeats: true) { _ in    withAnimation(.spring()) {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in    withAnimation(.spring()) {
             self.date = Date()
         }
         }
@@ -152,6 +128,18 @@ struct Watch: View {
         let actualHour = Double(hour) + (Double(minute)/60)
         
         return actualHour * radianInOneHour
+    }
+    
+    func getAngleFromTimezone(timezone: TimeZone) -> Double {
+        let formatter = DateFormatter()
+        formatter.timeZone = timezone
+        formatter.dateFormat = "HH"
+        let hour = Int(formatter.string(from: Date())) ?? 0
+
+        formatter.dateFormat = "mm"
+        let minute = Int(formatter.string(from: Date())) ?? 0
+        
+        return getHourAngle(hour: hour, minute: minute)
     }
 }
 
