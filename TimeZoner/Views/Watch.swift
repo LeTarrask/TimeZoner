@@ -11,12 +11,23 @@ import SwiftUI
 
 struct Watch_Preview: PreviewProvider {
     static var previews: Watch {
-        Watch()
+        let manager = TimeManager()
+        let testPersons: [Person] = [
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!),
+            Person(name: "Cotey", timezone: TimeZone(identifier: "America/Chicago") ?? TimeZone(identifier: "GMT")!),
+            Person(name: "Mikee", timezone: TimeZone(identifier: "America/Los_Angeles") ?? TimeZone(identifier: "GMT")!)
+        ]
+        
+        manager.persons = testPersons
+        
+        return Watch(manager: manager)
     }
 }
 
 struct Watch: View {
     @State var date: Date = Date()
+    
+    @ObservedObject var manager: TimeManager
     
     let radianInOneHour = 2 * Double.pi / 12
     let radianInOneMinute = 2 * Double.pi / 60
@@ -55,6 +66,7 @@ struct Watch: View {
             }
             
             // MARK: Extra hand testing
+            // TO DO: instead of hard coding, need to draw hands from each of the manager.persons in manager
             Group {
                 //Extra hand
                 Hand(offSet: 40)
@@ -63,19 +75,29 @@ struct Watch: View {
                     .frame(width: 4, alignment: .center)
                     .rotationEffect(.radians(getHourAngle(hour: 11-5, minute: 29)))
                 
-                //Extra hand
-                Hand(offSet: 40)
-                    .fill()
-                    .foregroundColor(.red)
-                    .frame(width: 4, alignment: .center)
-                    .rotationEffect(.radians(getHourAngle(hour: 11-6, minute: 29)))
+                ForEach(manager.persons) { person in
+                    let zone = person.timezone
+                    
+                    Hand(offSet: 40)
+                        .fill()
+                        .foregroundColor(.red)
+                        .frame(width: 4, alignment: .center)
+                        .rotationEffect(.radians(getHourAngle(hour: 0, minute: 0)))
+                }
                 
-                //Extra hand
-                Hand(offSet: 40)
-                    .fill()
-                    .foregroundColor(.green)
-                    .frame(width: 4, alignment: .center)
-                    .rotationEffect(.radians(getHourAngle(hour: 11-9, minute: 29)))
+//                //Extra hand
+//                Hand(offSet: 40)
+//                    .fill()
+//                    .foregroundColor(.red)
+//                    .frame(width: 4, alignment: .center)
+//                    .rotationEffect(.radians(getHourAngle(hour: 11-6, minute: 29)))
+//
+//                //Extra hand
+//                Hand(offSet: 40)
+//                    .fill()
+//                    .foregroundColor(.green)
+//                    .frame(width: 4, alignment: .center)
+//                    .rotationEffect(.radians(getHourAngle(hour: 11-9, minute: 29)))
             }
             
             // MARK: Regular watch hands
