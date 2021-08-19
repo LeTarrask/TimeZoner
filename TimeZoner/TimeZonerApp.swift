@@ -9,29 +9,10 @@ import SwiftUI
 
 @main
 struct TimeZonerApp: App {
-    @ObservedObject var manager: TimeManager = TimeManager()
-    
-    @State var addPerson: Bool = false
-    
-    var body: some Scene {
+   var body: some Scene {
         WindowGroup {
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    Button("Add Person") {
-                        addPerson.toggle()
-                    }
-                }
-                
-                Spacer()
-                
-                Watch(manager: manager)
-            }
-            .edgesIgnoringSafeArea(.all)
-            .sheet(isPresented: $addPerson, content: {
-                AddPersonView(manager: manager)
-            })
+            MainView()
         }
     }
 }
+

@@ -15,6 +15,7 @@
 		79762A7F26CE732000186733 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A7E26CE732000186733 /* Person.swift */; };
 		79762A8326CE77B300186733 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A8226CE77B300186733 /* TimeManager.swift */; };
 		79762A8626CEA5CC00186733 /* AddPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A8526CEA5CC00186733 /* AddPersonView.swift */; };
+		79762A8826CEB87100186733 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A8726CEB87100186733 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		79762A7E26CE732000186733 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		79762A8226CE77B300186733 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		79762A8526CEA5CC00186733 /* AddPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonView.swift; sourceTree = "<group>"; };
+		79762A8726CEB87100186733 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		79762A8126CE733300186733 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				79762A8726CEB87100186733 /* MainView.swift */,
 				79762A7A26CE637500186733 /* Watch.swift */,
 				79762A8526CEA5CC00186733 /* AddPersonView.swift */,
 			);
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79762A7F26CE732000186733 /* Person.swift in Sources */,
+				79762A8826CEB87100186733 /* MainView.swift in Sources */,
 				79762A7D26CE704D00186733 /* TimezoneList.swift in Sources */,
 				79762A8326CE77B300186733 /* TimeManager.swift in Sources */,
 				79762A7B26CE637500186733 /* Watch.swift in Sources */,
