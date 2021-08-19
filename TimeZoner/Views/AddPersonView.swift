@@ -10,13 +10,11 @@ import SwiftUI
 
 
 struct AddPersonView: View {
+    @ObservedObject var manager: TimeManager
+    
     @State private var name: String = ""
     @State private var color: Color = .red
-    @State var timezone: String = "" {
-        didSet {
-            print(self)
-        }
-    }
+    @State var TZid: String = "" 
     
     var body: some View {
         NavigationView {
@@ -24,7 +22,7 @@ struct AddPersonView: View {
                 Section {
                     TextField("Person name", text: $name)
                     ColorPicker("Choose a color! 🎨", selection: $color)
-                    Picker("Choose a timezone", selection: $timezone) {
+                    Picker("Choose a timezone", selection: $TZid) {
                         ForEach(TZones, id: \.self) {
                             Text($0)
                         }
@@ -33,6 +31,10 @@ struct AddPersonView: View {
                 
                 Section {
                     Button("Save") {
+                        if let timezone = TimeZone.init(identifier: TZid) {
+                            let person = Person(name: name, timezone: timezone, color: color)
+                            manager.persons.append(person)
+                        }
                     }
                 }
             }
@@ -42,7 +44,7 @@ struct AddPersonView: View {
 
 struct AddPersonView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPersonView()
+        AddPersonView(manager: TimeManager())
     }
 }
 
