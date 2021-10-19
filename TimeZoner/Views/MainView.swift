@@ -31,7 +31,7 @@ struct MainView: View {
                 })
             
             Spacer()
-        }
+        }.onAppear(perform: manager.load)
     }
 }
 
