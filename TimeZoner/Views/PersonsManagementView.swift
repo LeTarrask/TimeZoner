@@ -30,12 +30,16 @@ struct PersonsManagementView: View {
                             .font(.subheadline)
                     }
                 }
-                // TO DO: add call to manager delete person
+                .onDelete(perform: removeRows)
             }
             .navigationTitle("Your current timezones")
             .navigationBarTitleDisplayMode(.inline)
             // TO DO: add searchable
         }
+    }
+    
+    func removeRows(at offsets: IndexSet) {
+        manager.persons.remove(atOffsets: offsets)
     }
 }
 
