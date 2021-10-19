@@ -14,7 +14,7 @@ struct PersonsManagementView: View {
         NavigationView {
             List {
                 ForEach(manager.persons) { person in
-                    VStack {
+                    VStack(alignment: .leading) {
                         HStack {
                             if (person.imagePath != nil) {
                                 Image(person.imagePath!)
