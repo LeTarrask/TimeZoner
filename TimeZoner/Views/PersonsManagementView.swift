@@ -10,31 +10,41 @@ import SwiftUI
 struct PersonsManagementView: View {
     @ObservedObject var manager: TimeManager
     
+    @State private var searchText = ""
+    
+    var list: some View {
+        List {
+            ForEach(manager.persons) { person in
+                VStack(alignment: .leading) {
+                    HStack(alignment: .bottom) {
+                        if (person.imagePath != nil) {
+                            Image(person.imagePath!)
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 30, height: 30, alignment: .leading)
+                        }
+                        Text(person.name)
+                            .font(.headline)
+                    }
+                    
+                    Text(person.timezone.identifier)
+                        .font(.subheadline)
+                }
+            }
+            .onDelete(perform: removeRows)
+        }
+        .navigationTitle("Your current timezones")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(manager.persons) { person in
-                    VStack(alignment: .leading) {
-                        HStack {
-                            if (person.imagePath != nil) {
-                                Image(person.imagePath!)
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .frame(width: 30, height: 30, alignment: .leading)
-                            }
-                            Text(person.name)
-                                .font(.headline)
-                        }
-                        
-                        Text(person.timezone.identifier)
-                            .font(.subheadline)
-                    }
-                }
-                .onDelete(perform: removeRows)
+            if #available(iOS 15.0, *) {
+                list
+                    .searchable(text: $searchText)
+            } else {
+                list
             }
-            .navigationTitle("Your current timezones")
-            .navigationBarTitleDisplayMode(.inline)
-            // TO DO: add searchable
         }
     }
     
