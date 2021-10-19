@@ -8,15 +8,7 @@
 import SwiftUI
 
 class TimeManager: ObservableObject {
-    @Published var persons: [Person] = [] {
-        didSet {
-            sortPersons()
-        }
-    }
-    
-    func sortPersons() {
-        persons.sort { $0.timezone.secondsFromGMT() < $1.timezone.secondsFromGMT() }
-    }
+    @Published var persons: [Person] = []
     
     /// Documents Folder
     private static var documentsFolder: URL {
@@ -49,6 +41,11 @@ class TimeManager: ObservableObject {
             }
         }
     }
+    
+    func sortPersons() {
+        persons.sort { $0.localHour() > $1.localHour() }
+    }
+    
     
     /// Saves data into storage
     func save() {

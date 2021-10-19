@@ -79,6 +79,8 @@ struct PersonsManagementView_swift_Previews: PreviewProvider {
         
         manager.persons = testPersons
         
+        manager.sortPersons()
+        
         return PersonsManagementView(manager: manager)
     }
 }
