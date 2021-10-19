@@ -14,16 +14,20 @@ struct PersonsManagementView: View {
         NavigationView {
             List {
                 ForEach(manager.persons) { person in
-                    HStack {
-                        if (person.imagePath != nil) {
-                            Image(person.imagePath!)
-                                .resizable()
-                                .clipShape(Circle())
-                                .frame(width: 30, height: 30, alignment: .center)
+                    VStack {
+                        HStack {
+                            if (person.imagePath != nil) {
+                                Image(person.imagePath!)
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .frame(width: 30, height: 30, alignment: .leading)
+                            }
+                            Text(person.name)
+                                .font(.headline)
                         }
-                        Text(person.name)
-                        Spacer()
+                        
                         Text(person.timezone.identifier)
+                            .font(.subheadline)
                     }
                 }
                 // TO DO: add call to manager delete person
