@@ -27,7 +27,7 @@ struct PersonsManagementView: View {
                             .font(.headline)
                         
                         // TO DO: Customize country flag by locale
-                        Text("🇨🇺")
+                        Text(person.flag ?? "")
                         
                         Spacer()
                         
