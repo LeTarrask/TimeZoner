@@ -11,7 +11,7 @@
 		79762A7026CE636A00186733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79762A6F26CE636A00186733 /* Assets.xcassets */; };
 		79762A7326CE636A00186733 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79762A7226CE636A00186733 /* Preview Assets.xcassets */; };
 		79762A7B26CE637500186733 /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A7A26CE637500186733 /* Watch.swift */; };
-		79762A7D26CE704D00186733 /* TimezoneList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A7C26CE704D00186733 /* TimezoneList.swift */; };
+		79762A7D26CE704D00186733 /* Extension-TimezoneList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A7C26CE704D00186733 /* Extension-TimezoneList.swift */; };
 		79762A7F26CE732000186733 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A7E26CE732000186733 /* Person.swift */; };
 		79762A8326CE77B300186733 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A8226CE77B300186733 /* TimeManager.swift */; };
 		79762A8626CEA5CC00186733 /* AddPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A8526CEA5CC00186733 /* AddPersonView.swift */; };
@@ -33,7 +33,7 @@
 		79762A7226CE636A00186733 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79762A7426CE636A00186733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79762A7A26CE637500186733 /* Watch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
-		79762A7C26CE704D00186733 /* TimezoneList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimezoneList.swift; sourceTree = "<group>"; };
+		79762A7C26CE704D00186733 /* Extension-TimezoneList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-TimezoneList.swift"; sourceTree = "<group>"; };
 		79762A7E26CE732000186733 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		79762A8226CE77B300186733 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		79762A8526CEA5CC00186733 /* AddPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonView.swift; sourceTree = "<group>"; };
@@ -82,7 +82,6 @@
 				79762A8126CE733300186733 /* Views */,
 				79762A8426CE78AC00186733 /* ViewModel */,
 				79762A8026CE732900186733 /* Model */,
-				79762A7C26CE704D00186733 /* TimezoneList.swift */,
 				79762A6F26CE636A00186733 /* Assets.xcassets */,
 				79762A7426CE636A00186733 /* Info.plist */,
 				79762A7126CE636A00186733 /* Preview Content */,
@@ -103,6 +102,7 @@
 			children = (
 				79762A7E26CE732000186733 /* Person.swift */,
 				79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */,
+				79762A7C26CE704D00186733 /* Extension-TimezoneList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 				79762A7F26CE732000186733 /* Person.swift in Sources */,
 				79762A8826CEB87100186733 /* MainView.swift in Sources */,
 				79C6BD04271EEB3700314327 /* Extension-UIImage+ScaleImage.swift in Sources */,
-				79762A7D26CE704D00186733 /* TimezoneList.swift in Sources */,
+				79762A7D26CE704D00186733 /* Extension-TimezoneList.swift in Sources */,
 				79C6BCFF271EDACA00314327 /* ZoneChooser.swift in Sources */,
 				79762A8326CE77B300186733 /* TimeManager.swift in Sources */,
 				79762A7B26CE637500186733 /* Watch.swift in Sources */,
