@@ -142,6 +142,23 @@ struct Watch: View {
     }
 }
 
+// External circles generator
+// TO DO: add CircleFlipper code
+// TO DO: create enum for hour. This enum should pick specific hour and generate a circle for this specific timezone
+struct PersonCircle: View {
+    let multiplier = CGFloat.pi/6
+    
+    var radius: CGFloat
+    var hour: Int
+    
+    var body: some View {
+        Group {
+            
+        }
+    }
+}
+
+// Watchface drawing views
 struct Arc: Shape {
     var startAngle: Angle = .radians(0)
     var endAngle: Angle = .radians(Double.pi * 2)
