@@ -63,6 +63,10 @@ struct AddPersonView: View {
                                 let path = imageStore.saveToUserDir(image: image!)
                                 person.imagePath = path
                             }
+                            
+                            if flag.count != 0 {
+                                person.flag = flag
+                            }
                            
                             manager.persons.append(person)
                             manager.sortPersons()
