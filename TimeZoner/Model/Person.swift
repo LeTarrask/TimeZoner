@@ -12,6 +12,7 @@ struct Person: Identifiable {
     var name: String
     var timezone: TimeZone
     var color: Color
+    var image: Image?
     
     let formatter = DateFormatter()
 
