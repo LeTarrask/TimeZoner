@@ -103,7 +103,6 @@
 			children = (
 				79762A7E26CE732000186733 /* Person.swift */,
 				79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */,
-				79C6BD09271EFD3000314327 /* ImageStorage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				79762A8226CE77B300186733 /* TimeManager.swift */,
+				79C6BD09271EFD3000314327 /* ImageStorage.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
