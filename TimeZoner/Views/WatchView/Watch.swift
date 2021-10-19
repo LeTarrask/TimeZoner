@@ -37,7 +37,7 @@ struct Watch: View {
         let calendar = Calendar.current
         let dateComponents = calendar.dateComponents([.hour, .minute, .second], from: date)
         
-        //Convert Date to angle
+        /// Convert Date to angle
         var minuteAngle: Double = 0
         var hourAngle: Double = 0
         var secondAngle: Double = 0
