@@ -12,7 +12,7 @@ struct Watch_Preview: PreviewProvider {
     static var previews: Watch {
         let manager = TimeManager()
         let testPersons: [Person] = [
-            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red),
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red, image: Image("thumb")),
             Person(name: "Daniel", timezone: TimeZone(identifier: "America/Sao_Paulo") ?? TimeZone(identifier: "GMT")!, color: .blue),
             Person(name: "Mikee", timezone: TimeZone(identifier: "America/Los_Angeles") ?? TimeZone(identifier: "GMT")!, color: .green)
         ]
@@ -181,8 +181,14 @@ struct PersonCircle: View {
                 .frame(width: 30, height: 30, alignment: .center)
                 .opacity(0.5)
                 
-            
-            Text("D")
+            if (person.image != nil) {
+                person.image
+                    .frame(width: 25, height: 25, alignment: .center)
+                    .clipShape(Circle())
+            } else {
+                // TO DO: get first letter from name
+                Text("D")
+            }
         }
         .offset(x: radius * cos(position*multiplier),
                 y: radius * sin(position*multiplier))
