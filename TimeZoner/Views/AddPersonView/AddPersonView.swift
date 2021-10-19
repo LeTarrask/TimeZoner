@@ -62,6 +62,7 @@ struct AddPersonView: View {
                            
                             manager.persons.append(person)
                             manager.sortPersons()
+                            manager.save()
                             
                             presentationMode.wrappedValue.dismiss()
                         } else {
