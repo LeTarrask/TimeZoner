@@ -26,6 +26,7 @@ struct Watch_Preview: PreviewProvider {
         ]
         
         manager.persons = testPersons
+        manager.sortPersons()
         
         return Watch(manager: manager)
     }
