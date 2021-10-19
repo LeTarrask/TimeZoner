@@ -18,9 +18,11 @@ struct AddPersonView: View {
     @State private var color: Color = .red
     @State var TZid: String = "none chosen"
     
-    @State var pickerActive: Bool = false
+    @State var showingZonePicker: Bool = false
     
-    var image: Image?
+    @State var image: Image?
+    
+    @State var showingImagePicker: Bool = false
     
     var body: some View {
         NavigationView {
@@ -32,13 +34,16 @@ struct AddPersonView: View {
                 
                 Section(header: Text("Choose a timezone")) {
                     Text("Current zone -> \(TZid)")
-                    NavigationLink("Change zone", destination: ZoneChooser(TZid: $TZid), isActive: $pickerActive)
+                    NavigationLink("Change zone", destination: ZoneChooser(TZid: $TZid), isActive: $showingZonePicker)
                 }
                 
-                Section(header: Text("Pick an image")) {
-                    // TO DO: add an image picker here
-                    // TO DO: convert image to thumbnail
+                Section(header: Text("Pick an image from your library")) {
+                    // Image picker here, returns uiImage that's sent to addPhoto
+                    Button("Choose an image") {
+                        showingImagePicker.toggle()
+                    }
                     
+                    image
                 }
                 
                 Section {
@@ -54,6 +59,17 @@ struct AddPersonView: View {
                     }
                 }
             }.navigationBarTitle("Create a new timezone watch", displayMode: .inline)
+        }
+        .sheet(isPresented: $showingImagePicker) {
+            ImagePickerView(sourceType: .photoLibrary, onImagePicked: { image in
+                addPhoto(uiImage: image)
+            })
+        }
+    }
+    
+    func addPhoto(uiImage: UIImage) -> Void {
+        if let scaledImage = uiImage.scaleImage(toSize: CGSize(width: 30, height: 30)) {
+            image = Image(uiImage: scaledImage)
         }
     }
 }
