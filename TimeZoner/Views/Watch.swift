@@ -73,7 +73,7 @@ struct Watch: View {
                         .frame(width: 4, alignment: .center)
                         .rotationEffect(.radians(getHourAngle(hour: person.localHour(), minute: person.localMinute())
                         ))
-                    PersonCircle(radius: 120, hour: 3)
+                    PersonCircle(radius: 120, hour: person.localHour(), color: person.color)
                 }
             }
             
@@ -136,17 +136,51 @@ struct Watch: View {
 struct PersonCircle: View {
     let multiplier = CGFloat.pi/6
     
-    var radius: CGFloat
-    var hour: Int
+    let radius: CGFloat
+    let hour: Int
+    
+    let color: Color
+    
+    func generatePosition() -> CGFloat {
+        switch hour {
+        case 0, 12:
+            return 9
+        case 1, 13:
+            return 10
+        case 2, 14:
+            return 11
+        case 3, 15:
+            return 0
+        case 4, 16:
+            return 1
+        case 5, 17:
+            return 2
+        case 6, 18:
+            return 3
+        case 7, 19:
+            return 4
+        case 8, 20:
+            return 5
+        case 9, 21:
+            return 6
+        case 10, 22:
+            return 7
+        case 11, 23:
+            return 8
+        default:
+            return 0
+        }
+    }
     
     var body: some View {
-        Circle()
+        let position = generatePosition()
+        return Circle()
             .fill()
-            .foregroundColor(.blue)
+            .foregroundColor(color)
             .frame(width: 30, height: 30, alignment: .center)
             .opacity(0.5)
-            .offset(x: radius * cos(0*multiplier),
-                    y: radius * sin(0*multiplier))
+            .offset(x: radius * cos(position*multiplier),
+                    y: radius * sin(position*multiplier))
     }
 }
 
