@@ -18,6 +18,7 @@
 		79762A8826CEB87100186733 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A8726CEB87100186733 /* MainView.swift */; };
 		79C6BCFB271ED26C00314327 /* PersonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BCFA271ED26C00314327 /* PersonCircle.swift */; };
 		79C6BCFD271ED28C00314327 /* WatchDrawings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BCFC271ED28C00314327 /* WatchDrawings.swift */; };
+		79C6BCFF271EDACA00314327 /* ZoneChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BCFE271EDACA00314327 /* ZoneChooser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		79762A8726CEB87100186733 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		79C6BCFA271ED26C00314327 /* PersonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCircle.swift; sourceTree = "<group>"; };
 		79C6BCFC271ED28C00314327 /* WatchDrawings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDrawings.swift; sourceTree = "<group>"; };
+		79C6BCFE271EDACA00314327 /* ZoneChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneChooser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +101,7 @@
 			children = (
 				79762A8726CEB87100186733 /* MainView.swift */,
 				79C6BCF9271ED24000314327 /* WatchView */,
-				79762A8526CEA5CC00186733 /* AddPersonView.swift */,
+				79C6BD00271EDB3600314327 /* AddPersonView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,6 +122,15 @@
 				79C6BCFA271ED26C00314327 /* PersonCircle.swift */,
 			);
 			path = WatchView;
+			sourceTree = "<group>";
+		};
+		79C6BD00271EDB3600314327 /* AddPersonView */ = {
+			isa = PBXGroup;
+			children = (
+				79762A8526CEA5CC00186733 /* AddPersonView.swift */,
+				79C6BCFE271EDACA00314327 /* ZoneChooser.swift */,
+			);
+			path = AddPersonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 				79762A7F26CE732000186733 /* Person.swift in Sources */,
 				79762A8826CEB87100186733 /* MainView.swift in Sources */,
 				79762A7D26CE704D00186733 /* TimezoneList.swift in Sources */,
+				79C6BCFF271EDACA00314327 /* ZoneChooser.swift in Sources */,
 				79762A8326CE77B300186733 /* TimeManager.swift in Sources */,
 				79762A7B26CE637500186733 /* Watch.swift in Sources */,
 				79762A6C26CE635E00186733 /* TimeZonerApp.swift in Sources */,
