@@ -33,7 +33,7 @@ class TimeManager: ObservableObject {
             guard let data = try? Data(contentsOf: Self.infoURL) else { return }
 
             guard let persons = try? JSONDecoder().decode([Person].self, from: data) else {
-                fatalError("Can't decode saved refuel data.")
+                fatalError("Can't decode saved Person data.")
             }
             DispatchQueue.main.async {
                 self?.persons = persons
@@ -45,12 +45,12 @@ class TimeManager: ObservableObject {
     func save() {
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let persons = self?.persons else { fatalError("Self out of scope") }
-            guard let data = try? JSONEncoder().encode(persons) else { fatalError("Error encoding refuelsdata") }
+            guard let data = try? JSONEncoder().encode(persons) else { fatalError("Error encoding Person data") }
             do {
                 let outfile = Self.infoURL
                 try data.write(to: outfile)
             } catch {
-                fatalError("Can't write refuels to file")
+                fatalError("Can't write Persons to file")
             }
         }
     }
