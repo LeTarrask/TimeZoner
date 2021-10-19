@@ -187,7 +187,14 @@ struct PersonCircle: View {
                     .clipShape(Circle())
             } else {
                 // TO DO: get first letter from name
-                Text("D")
+                ZStack {
+                    Circle()
+                        .fill()
+                        .foregroundColor(.white)
+                        .frame(width: 25, height: 25, alignment: .center)
+                    
+                    Text("?")
+                }
             }
         }
         .offset(x: radius * cos(position*multiplier),
