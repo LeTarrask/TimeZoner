@@ -24,6 +24,7 @@
 		79C6BD06271EEE7400314327 /* PersonsManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD05271EEE7400314327 /* PersonsManagementView.swift */; };
 		79C6BD08271EF35B00314327 /* Extension-Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */; };
 		79C6BD0A271EFD3000314327 /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD09271EFD3000314327 /* ImageStorage.swift */; };
+		79C6BD0C271F430F00314327 /* FlagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD0B271F430F00314327 /* FlagPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		79C6BD05271EEE7400314327 /* PersonsManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsManagementView.swift; sourceTree = "<group>"; };
 		79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Color+Codable.swift"; sourceTree = "<group>"; };
 		79C6BD09271EFD3000314327 /* ImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
+		79C6BD0B271F430F00314327 /* FlagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				79762A8526CEA5CC00186733 /* AddPersonView.swift */,
+				79C6BD0B271F430F00314327 /* FlagPicker.swift */,
 				79C6BCFE271EDACA00314327 /* ZoneChooser.swift */,
 				79C6BD01271EE78600314327 /* ImagePicker.swift */,
 				79C6BD03271EEB3700314327 /* Extension-UIImage+ScaleImage.swift */,
@@ -220,6 +223,7 @@
 				79762A7F26CE732000186733 /* Person.swift in Sources */,
 				79762A8826CEB87100186733 /* MainView.swift in Sources */,
 				79C6BD04271EEB3700314327 /* Extension-UIImage+ScaleImage.swift in Sources */,
+				79C6BD0C271F430F00314327 /* FlagPicker.swift in Sources */,
 				79762A7D26CE704D00186733 /* Extension-TimezoneList.swift in Sources */,
 				79C6BCFF271EDACA00314327 /* ZoneChooser.swift in Sources */,
 				79762A8326CE77B300186733 /* TimeManager.swift in Sources */,
