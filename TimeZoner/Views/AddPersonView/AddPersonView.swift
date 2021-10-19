@@ -48,6 +48,8 @@ struct AddPersonView: View {
                     }
                 }
                 
+                // TO DO: Add insert an emoji flag view here
+                
                 Section {
                     Button("Save") {
                         if let timezone = TimeZone.init(identifier: TZid) {
