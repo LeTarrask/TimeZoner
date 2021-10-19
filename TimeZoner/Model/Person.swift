@@ -28,6 +28,10 @@ struct Person: Identifiable, Codable {
         formatter.dateFormat = "mm"
         return Int(formatter.string(from: Date())) ?? 0
     }
+    
+    func localTime() -> String {
+        return String(format: "%02d",localHour()) + ":" + String(format: "%02d",localMinute())
+    }
 }
 
 

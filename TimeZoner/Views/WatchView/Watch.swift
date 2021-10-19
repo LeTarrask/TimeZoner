@@ -14,7 +14,15 @@ struct Watch_Preview: PreviewProvider {
         let testPersons: [Person] = [
             Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba"),
             Person(name: "Daniel", timezone: TimeZone(identifier: "America/Sao_Paulo") ?? TimeZone(identifier: "GMT")!, color: .blue),
-            Person(name: "Alex", timezone: TimeZone(identifier: "Europe/Lisbon") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb")
+            Person(name: "Alex", timezone: TimeZone(identifier: "Europe/Lisbon") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb"),
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/Argentina/Catamarca") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba"),
+            Person(name: "Daniel", timezone: TimeZone(identifier: "Asia/Amman") ?? TimeZone(identifier: "GMT")!, color: .blue),
+            Person(name: "Alex", timezone: TimeZone(identifier: "Asia/Phnom_Penh") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb"),
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "Antarctica/Palmer") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba"),
+            Person(name: "Daniel", timezone: TimeZone(identifier: "Europe/Budapest") ?? TimeZone(identifier: "GMT")!, color: .blue),
+            Person(name: "Alex", timezone: TimeZone(identifier: "Indian/Antananarivo") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb"),
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "Indian/Maldives") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba"),
+            Person(name: "Daniel", timezone: TimeZone(identifier: "Pacific/Wallis") ?? TimeZone(identifier: "GMT")!, color: .blue),
         ]
         
         manager.persons = testPersons
