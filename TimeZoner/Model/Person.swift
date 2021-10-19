@@ -13,6 +13,7 @@ struct Person: Identifiable, Codable {
     var timezone: TimeZone
     var color: Color
     var imagePath: String?
+    var flag: String?
 
     
     func localHour() -> Int {
