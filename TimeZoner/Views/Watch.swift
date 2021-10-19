@@ -13,7 +13,7 @@ struct Watch_Preview: PreviewProvider {
         let manager = TimeManager()
         let testPersons: [Person] = [
             Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red),
-            Person(name: "Cotey", timezone: TimeZone(identifier: "America/Chicago") ?? TimeZone(identifier: "GMT")!, color: .blue),
+            Person(name: "Daniel", timezone: TimeZone(identifier: "America/Sao_Paulo") ?? TimeZone(identifier: "GMT")!, color: .blue),
             Person(name: "Mikee", timezone: TimeZone(identifier: "America/Los_Angeles") ?? TimeZone(identifier: "GMT")!, color: .green)
         ]
         
@@ -64,7 +64,7 @@ struct Watch: View {
                     .frame(width: 15, height: 15, alignment: .center)
             }
             
-            // MARK: Extra hand testing
+            // MARK: Extra hands
             Group {
                 ForEach(manager.persons) { person in
                     Hand(offSet: 40)
@@ -72,6 +72,7 @@ struct Watch: View {
                         .foregroundColor(person.color)
                         .frame(width: 4, alignment: .center)
                         .rotationEffect(.radians(getAngleFromTimezone(timezone: person.timezone)))
+                    
                 }
             }
             
@@ -152,14 +153,6 @@ struct Arc: Shape {
         let radius = min(rect.width/2, rect.height/2)
         
         path.addArc(center:  center, radius: radius , startAngle: startAngle, endAngle: endAngle, clockwise: clockWise)
-        return path
-    }
-}
-
-struct Circle:  Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.addEllipse(in: rect)
         return path
     }
 }
