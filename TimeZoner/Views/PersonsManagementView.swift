@@ -57,6 +57,7 @@ struct PersonsManagementView: View {
     
     func removeRows(at offsets: IndexSet) {
         manager.persons.remove(atOffsets: offsets)
+        manager.save()
     }
 }
 
