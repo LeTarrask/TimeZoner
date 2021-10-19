@@ -12,9 +12,9 @@ struct Watch_Preview: PreviewProvider {
     static var previews: Watch {
         let manager = TimeManager()
         let testPersons: [Person] = [
-            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red, image: Image("thumb")),
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red, image: Image("samba")),
             Person(name: "Daniel", timezone: TimeZone(identifier: "America/Sao_Paulo") ?? TimeZone(identifier: "GMT")!, color: .blue),
-            Person(name: "Mikee", timezone: TimeZone(identifier: "America/Los_Angeles") ?? TimeZone(identifier: "GMT")!, color: .green)
+            Person(name: "Alex", timezone: TimeZone(identifier: "Europe/Lisbon") ?? TimeZone(identifier: "GMT")!, color: .green, image: Image("thumb"))
         ]
         
         manager.persons = testPersons
