@@ -49,7 +49,7 @@ struct Watch: View {
             secondAngle = getSecondAngle(second: second)
         }
         
-        return ZStack{
+        return ZStack {
             Circle().fill(Color.green.opacity(0.2))
             
             // MARK: Watchface drawing
@@ -64,24 +64,10 @@ struct Watch: View {
                     .frame(width: 15, height: 15, alignment: .center)
             }
             
-            // MARK: Extra hands
-            Group {
-                ForEach(manager.persons) { person in
-                    Hand(offSet: 40)
-                        .fill()
-                        .foregroundColor(person.color)
-                        .frame(width: 4, alignment: .center)
-                        .rotationEffect(.radians(getHourAngle(hour: person.localHour(),
-                                                              minute: person.localMinute())))
-                    PersonCircle(radius: 118,
-                                 person: person)
-                }
-            }
-            
             // MARK: Regular watch hands
             Group {
                 //Hour hand
-                Hand(offSet: 40)
+                Hand(offSet: 35)
                     .fill()
                     .frame(width: 4, alignment: .center)
                     .rotationEffect(.radians(hourAngle))
@@ -101,6 +87,20 @@ struct Watch: View {
                     .rotationEffect(.radians(secondAngle))
             }
             
+            // MARK: Extra hands
+            Group {
+                ForEach(manager.persons) { person in
+                    Hand(offSet: 50)
+                        .fill()
+                        .foregroundColor(person.color)
+                        .frame(width: 4, alignment: .center)
+                        .rotationEffect(.radians(getHourAngle(hour: person.localHour(),
+                                                              minute: person.localMinute())))
+                    PersonCircle(radius: 118,
+                                 person: person)
+                }
+            }
+                      
             Circle()
                 .fill()
                 .foregroundColor(.red)
@@ -113,7 +113,7 @@ struct Watch: View {
     func start() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in    withAnimation(.spring()) {
             self.date = Date()
-        }
+            }
         }
     }
     
