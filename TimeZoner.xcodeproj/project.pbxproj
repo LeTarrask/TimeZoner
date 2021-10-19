@@ -16,6 +16,8 @@
 		79762A8326CE77B300186733 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A8226CE77B300186733 /* TimeManager.swift */; };
 		79762A8626CEA5CC00186733 /* AddPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A8526CEA5CC00186733 /* AddPersonView.swift */; };
 		79762A8826CEB87100186733 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762A8726CEB87100186733 /* MainView.swift */; };
+		79C6BCFB271ED26C00314327 /* PersonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BCFA271ED26C00314327 /* PersonCircle.swift */; };
+		79C6BCFD271ED28C00314327 /* WatchDrawings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BCFC271ED28C00314327 /* WatchDrawings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		79762A8226CE77B300186733 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		79762A8526CEA5CC00186733 /* AddPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonView.swift; sourceTree = "<group>"; };
 		79762A8726CEB87100186733 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		79C6BCFA271ED26C00314327 /* PersonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCircle.swift; sourceTree = "<group>"; };
+		79C6BCFC271ED28C00314327 /* WatchDrawings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDrawings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				79762A8726CEB87100186733 /* MainView.swift */,
-				79762A7A26CE637500186733 /* Watch.swift */,
+				79C6BCF9271ED24000314327 /* WatchView */,
 				79762A8526CEA5CC00186733 /* AddPersonView.swift */,
 			);
 			path = Views;
@@ -106,6 +110,16 @@
 				79762A8226CE77B300186733 /* TimeManager.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		79C6BCF9271ED24000314327 /* WatchView */ = {
+			isa = PBXGroup;
+			children = (
+				79762A7A26CE637500186733 /* Watch.swift */,
+				79C6BCFC271ED28C00314327 /* WatchDrawings.swift */,
+				79C6BCFA271ED26C00314327 /* PersonCircle.swift */,
+			);
+			path = WatchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +197,8 @@
 				79762A8326CE77B300186733 /* TimeManager.swift in Sources */,
 				79762A7B26CE637500186733 /* Watch.swift in Sources */,
 				79762A6C26CE635E00186733 /* TimeZonerApp.swift in Sources */,
+				79C6BCFD271ED28C00314327 /* WatchDrawings.swift in Sources */,
+				79C6BCFB271ED26C00314327 /* PersonCircle.swift in Sources */,
 				79762A8626CEA5CC00186733 /* AddPersonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
