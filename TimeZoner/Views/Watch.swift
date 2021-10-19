@@ -71,9 +71,10 @@ struct Watch: View {
                         .fill()
                         .foregroundColor(person.color)
                         .frame(width: 4, alignment: .center)
-                        .rotationEffect(.radians(getHourAngle(hour: person.localHour(), minute: person.localMinute())
-                        ))
-                    PersonCircle(radius: 120, hour: person.localHour(), color: person.color)
+                        .rotationEffect(.radians(getHourAngle(hour: person.localHour(),
+                                                              minute: person.localMinute())))
+                    PersonCircle(radius: 118,
+                                 person: person)
                 }
             }
             
@@ -132,17 +133,15 @@ struct Watch: View {
 }
 
 // External circles generator
-// TO DO: create enum for hour. This enum should pick specific hour and generate a circle for this specific timezone
 struct PersonCircle: View {
     let multiplier = CGFloat.pi/6
     
     let radius: CGFloat
-    let hour: Int
     
-    let color: Color
-    
+    let person: Person
+        
     func generatePosition() -> CGFloat {
-        switch hour {
+        switch person.localHour() {
         case 0, 12:
             return 9
         case 1, 13:
@@ -174,13 +173,19 @@ struct PersonCircle: View {
     
     var body: some View {
         let position = generatePosition()
-        return Circle()
-            .fill()
-            .foregroundColor(color)
-            .frame(width: 30, height: 30, alignment: .center)
-            .opacity(0.5)
-            .offset(x: radius * cos(position*multiplier),
-                    y: radius * sin(position*multiplier))
+        
+        return ZStack {
+            Circle()
+                .fill()
+                .foregroundColor(person.color)
+                .frame(width: 30, height: 30, alignment: .center)
+                .opacity(0.5)
+                
+            
+            Text("D")
+        }
+        .offset(x: radius * cos(position*multiplier),
+                y: radius * sin(position*multiplier))
     }
 }
 
