@@ -186,14 +186,14 @@ struct PersonCircle: View {
                     .frame(width: 25, height: 25, alignment: .center)
                     .clipShape(Circle())
             } else {
-                // TO DO: get first letter from name
                 ZStack {
                     Circle()
                         .fill()
                         .foregroundColor(.white)
                         .frame(width: 25, height: 25, alignment: .center)
                     
-                    Text("?")
+                    Text(person.name.prefix(1))
+                        .fontWeight(.bold)
                 }
             }
         }
