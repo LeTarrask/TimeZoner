@@ -20,8 +20,8 @@ struct AddPersonView: View {
     
     @State var showingZonePicker: Bool = false
     
-    @State var image: Image?
-    
+    let imageStore = ImageStore()
+    @State var image: UIImage?
     @State var showingImagePicker: Bool = false
     
     var body: some View {
@@ -43,13 +43,21 @@ struct AddPersonView: View {
                         showingImagePicker.toggle()
                     }
                     
-                    image
+                    if image != nil {
+                        Image(uiImage: image!)
+                    }
                 }
                 
                 Section {
                     Button("Save") {
                         if let timezone = TimeZone.init(identifier: TZid) {
-                            let person = Person(name: name, timezone: timezone, color: color, image: image)
+                            var person = Person(name: name, timezone: timezone, color: color, imagePath: nil)
+                            
+                            if image != nil {
+                                let path = imageStore.saveToUserDir(image: image!)
+                                person.imagePath = path
+                            }
+                           
                             manager.persons.append(person)
                             
                             presentationMode.wrappedValue.dismiss()
@@ -68,9 +76,7 @@ struct AddPersonView: View {
     }
     
     func addPhoto(uiImage: UIImage) -> Void {
-        if let scaledImage = uiImage.scaleImage(toSize: CGSize(width: 30, height: 30)) {
-            image = Image(uiImage: scaledImage)
-        }
+        image = uiImage.scaleImage(toSize: CGSize(width: 30, height: 30)) 
     }
 }
 

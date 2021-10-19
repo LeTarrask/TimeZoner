@@ -23,6 +23,7 @@
 		79C6BD04271EEB3700314327 /* Extension-UIImage+ScaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD03271EEB3700314327 /* Extension-UIImage+ScaleImage.swift */; };
 		79C6BD06271EEE7400314327 /* PersonsManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD05271EEE7400314327 /* PersonsManagementView.swift */; };
 		79C6BD08271EF35B00314327 /* Extension-Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */; };
+		79C6BD0A271EFD3000314327 /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD09271EFD3000314327 /* ImageStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		79C6BD03271EEB3700314327 /* Extension-UIImage+ScaleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UIImage+ScaleImage.swift"; sourceTree = "<group>"; };
 		79C6BD05271EEE7400314327 /* PersonsManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsManagementView.swift; sourceTree = "<group>"; };
 		79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Color+Codable.swift"; sourceTree = "<group>"; };
+		79C6BD09271EFD3000314327 /* ImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				79762A7E26CE732000186733 /* Person.swift */,
 				79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */,
+				79C6BD09271EFD3000314327 /* ImageStorage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				79C6BCFF271EDACA00314327 /* ZoneChooser.swift in Sources */,
 				79762A8326CE77B300186733 /* TimeManager.swift in Sources */,
 				79762A7B26CE637500186733 /* Watch.swift in Sources */,
+				79C6BD0A271EFD3000314327 /* ImageStorage.swift in Sources */,
 				79762A6C26CE635E00186733 /* TimeZonerApp.swift in Sources */,
 				79C6BD08271EF35B00314327 /* Extension-Color+Codable.swift in Sources */,
 				79C6BD02271EE78600314327 /* ImagePicker.swift in Sources */,
