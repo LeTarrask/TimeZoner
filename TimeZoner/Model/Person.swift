@@ -12,6 +12,20 @@ struct Person: Identifiable {
     var name: String
     var timezone: TimeZone
     var color: Color
+    
+    let formatter = DateFormatter()
+
+    func localHour() -> Int {
+        formatter.timeZone = timezone
+        formatter.dateFormat = "HH"
+        return Int(formatter.string(from: Date())) ?? 0
+    }
+    
+    func localMinute() -> Int {
+        formatter.timeZone = timezone
+        formatter.dateFormat = "mm"
+        return Int(formatter.string(from: Date())) ?? 0
+    }
 }
 
 
