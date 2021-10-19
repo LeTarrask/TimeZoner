@@ -71,7 +71,8 @@ struct Watch: View {
                         .fill()
                         .foregroundColor(person.color)
                         .frame(width: 4, alignment: .center)
-                        .rotationEffect(.radians(getAngleFromTimezone(timezone: person.timezone)))
+                        .rotationEffect(.radians(getHourAngle(hour: person.localHour(), minute: person.localMinute())
+                        ))
                     
                 }
             }
@@ -127,18 +128,6 @@ struct Watch: View {
         let actualHour = Double(hour) + (Double(minute)/60)
         
         return actualHour * radianInOneHour
-    }
-    
-    func getAngleFromTimezone(timezone: TimeZone) -> Double {
-        let formatter = DateFormatter()
-        formatter.timeZone = timezone
-        formatter.dateFormat = "HH"
-        let hour = Int(formatter.string(from: Date())) ?? 0
-
-        formatter.dateFormat = "mm"
-        let minute = Int(formatter.string(from: Date())) ?? 0
-        
-        return getHourAngle(hour: hour, minute: minute)
     }
 }
 
