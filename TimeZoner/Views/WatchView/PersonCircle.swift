@@ -67,8 +67,13 @@ struct PersonCircle: View {
                         .foregroundColor(.white)
                         .frame(width: 25, height: 25, alignment: .center)
                     
-                    Text(person.name.prefix(1))
-                        .fontWeight(.bold)
+                    if person.name.count > 0 {
+                        Text(person.name.prefix(1))
+                            .fontWeight(.bold)
+                    } else {
+                        Text("?")
+                    }
+                    
                 }
             }
         }
