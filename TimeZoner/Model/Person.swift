@@ -12,9 +12,8 @@ struct Person: Identifiable, Codable {
     var name: String
     var timezone: TimeZone
     var color: Color
-    var imagePath: String? // optional string to store image path
-    
-    // TO DO: add image to local path
+    var imagePath: String?
+
     
     func localHour() -> Int {
         let formatter = DateFormatter()
