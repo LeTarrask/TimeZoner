@@ -22,6 +22,7 @@
 		79C6BD02271EE78600314327 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD01271EE78600314327 /* ImagePicker.swift */; };
 		79C6BD04271EEB3700314327 /* Extension-UIImage+ScaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD03271EEB3700314327 /* Extension-UIImage+ScaleImage.swift */; };
 		79C6BD06271EEE7400314327 /* PersonsManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD05271EEE7400314327 /* PersonsManagementView.swift */; };
+		79C6BD08271EF35B00314327 /* Extension-Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		79C6BD01271EE78600314327 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		79C6BD03271EEB3700314327 /* Extension-UIImage+ScaleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UIImage+ScaleImage.swift"; sourceTree = "<group>"; };
 		79C6BD05271EEE7400314327 /* PersonsManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsManagementView.swift; sourceTree = "<group>"; };
+		79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Color+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				79762A7E26CE732000186733 /* Person.swift */,
+				79C6BD07271EF35B00314327 /* Extension-Color+Codable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				79762A8326CE77B300186733 /* TimeManager.swift in Sources */,
 				79762A7B26CE637500186733 /* Watch.swift in Sources */,
 				79762A6C26CE635E00186733 /* TimeZonerApp.swift in Sources */,
+				79C6BD08271EF35B00314327 /* Extension-Color+Codable.swift in Sources */,
 				79C6BD02271EE78600314327 /* ImagePicker.swift in Sources */,
 				79C6BCFD271ED28C00314327 /* WatchDrawings.swift in Sources */,
 				79C6BCFB271ED26C00314327 /* PersonCircle.swift in Sources */,

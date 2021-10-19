@@ -56,8 +56,8 @@ struct PersonCircle: View {
                 .frame(width: 30, height: 30, alignment: .center)
                 .opacity(0.5)
                 
-            if (person.image != nil) {
-                person.image
+            if (person.imagePath != nil) {
+                Image(person.imagePath!)
                     .frame(width: 25, height: 25, alignment: .center)
                     .clipShape(Circle())
             } else {
