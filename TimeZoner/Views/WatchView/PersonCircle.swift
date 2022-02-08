@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-// External circles generator
 struct PersonCircle: View {
+    /// Generates the external circle with the persons avatar, and positions it according to the timezone
+    
     let multiplier = CGFloat.pi/6
     
     let radius: CGFloat = 118
