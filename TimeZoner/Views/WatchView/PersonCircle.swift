@@ -15,7 +15,7 @@ struct PersonCircle: View {
     
     let person: Person
         
-    func generatePosition() -> CGFloat {
+    func calculateAngle() -> CGFloat {
         let localHour = CGFloat(person.localHour()) - 3
         let localMinute = CGFloat(person.localMinute())/60
                          
@@ -50,7 +50,7 @@ struct PersonCircle: View {
                 }
             }
         }
-        .offset(x: radius * cos(generatePosition()),
-                y: radius * sin(generatePosition()))
+        .offset(x: radius * cos(calculateAngle()),
+                y: radius * sin(calculateAngle()))
     }
 }
