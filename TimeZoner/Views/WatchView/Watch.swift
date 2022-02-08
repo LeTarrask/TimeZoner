@@ -36,12 +36,7 @@ struct Watch: View {
     @State var date: Date = Date()
     
     @ObservedObject var manager: TimeManager
-    
-    let radianInOneHour = 2 * Double.pi / 12
-    let radianInOneMinute = 2 * Double.pi / 60
-    
-    let timeZone: Int = 1
-    
+        
     var body: some View {
         let calendar = Calendar.current
         let dateComponents = calendar.dateComponents([.hour, .minute, .second], from: date)
@@ -51,11 +46,19 @@ struct Watch: View {
         var hourAngle: Double = 0
         var secondAngle: Double = 0
         
-        if let hour =  dateComponents.hour, let minute = dateComponents.minute, let second = dateComponents.second {
+        if let hour =  dateComponents.hour,
+            let minute = dateComponents.minute,
+            let second = dateComponents.second {
             
-            hourAngle = getHourAngle(hour: hour, minute: minute)
-            minuteAngle = getMinuteAngle(minute: minute)
-            secondAngle = getSecondAngle(second: second)
+            let radianInOneHour = 2 * Double.pi / 12
+            let radianInOneMinute = 2 * Double.pi / 60
+            
+            minuteAngle = Double(minute) * radianInOneMinute
+            
+            let actualHour = Double(hour) + (Double(minute)/60)
+            hourAngle = actualHour * radianInOneHour
+            
+            secondAngle = Double(second) * radianInOneMinute
         }
         
         return ZStack {
@@ -120,22 +123,14 @@ struct Watch: View {
     }
     
     func start() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in    withAnimation(.spring()) {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.date = Date()
-            }
         }
-    }
-    
-    func getSecondAngle(second: Int) -> Double {
-        return Double(second) * radianInOneMinute
-    }
-    
-    func getMinuteAngle(minute: Int) -> Double {
-        return Double(minute) * radianInOneMinute
     }
     
     func getHourAngle(hour: Int, minute: Int) -> Double {
         let actualHour = Double(hour) + (Double(minute)/60)
+        let radianInOneHour = 2 * Double.pi / 12
         
         return actualHour * radianInOneHour
     }
