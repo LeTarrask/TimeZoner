@@ -103,7 +103,7 @@ struct Watch: View {
                 ForEach(manager.persons) { person in
                     Hand(offSet: 50)
                         .fill()
-                        .foregroundColor(person.color)
+                        .foregroundColor(person.color).opacity(0.3)
                         .frame(width: 4, alignment: .center)
                         .rotationEffect(.radians(getHourAngle(hour: person.localHour(),
                                                               minute: person.localMinute())))
