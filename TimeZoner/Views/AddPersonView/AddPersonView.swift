@@ -91,11 +91,11 @@ struct AddPersonView: View {
         image = uiImage.scaleImage(toSize: CGSize(width: 30, height: 30)) 
     }
     
-    func autoFlagPicker() {
-        if let cityName = TZid.split(separator: "/").last {
-            // TO DO: find a way of converting city name into country and getting the country flag from the flags dictionary
-        }
-    }
+//    func autoFlagPicker() {
+//        if let cityName = TZid.split(separator: "/").last {
+//            // TO DO: find a way of converting city name into country and getting the country flag from the flags dictionary
+//        }
+//    }
 }
 
 struct AddPersonView_Previews: PreviewProvider {

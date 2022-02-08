@@ -107,9 +107,8 @@ struct Watch: View {
                         .frame(width: 4, alignment: .center)
                         .rotationEffect(.radians(getHourAngle(hour: person.localHour(),
                                                               minute: person.localMinute())))
-                    // TO DO: position according to hour and minute. Could calculate here and pass value to PersonCircle
-                    PersonCircle(radius: 118,
-                                 person: person)
+                    
+                    PersonCircle(person: person)
                 }
             }
                       
@@ -135,6 +134,7 @@ struct Watch: View {
         return actualHour * radianInOneHour
     }
 }
+
 
 
 
