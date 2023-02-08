@@ -15,34 +15,17 @@ struct ZoneChooser: View {
     @State private var searchText = ""
       
     var body: some View {
-        if #available(iOS 15, *) {
-            List {
-                ForEach(searchResults, id: \.self) { zone in
-                    Button(zone) {
-                        TZid = zone
-                        presentationMode.wrappedValue.dismiss()
-                    }
+        List {
+            ForEach(searchResults, id: \.self) { zone in
+                Button(zone) {
+                    TZid = zone
+                    presentationMode.wrappedValue.dismiss()
                 }
+                .listRowSeparator(.hidden)
             }
-            .searchable(text: $searchText)
-
-            
-//            #if os(macOS)
-//    .listStyle(SidebarListStyle())
-//    #else
-//    .navigationViewStyle(DefaultNavigationViewStyle())
-//    #endif
-            
-        } else {
-            List {
-                ForEach(searchResults, id: \.self) { zone in
-                    Button(zone) {
-                        TZid = zone
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                }
-            }
+            .listStyle(.plain)
         }
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
     }
     
     var searchResults: [String] {
