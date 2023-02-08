@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ImageStore {
+class ImageStore: ObservableObject {
     private func getDocumentsDirectory() -> URL {
         // find all possible documents directories for this user
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

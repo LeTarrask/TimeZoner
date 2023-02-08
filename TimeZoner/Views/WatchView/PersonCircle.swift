@@ -44,6 +44,8 @@ struct PersonCircle: View {
                     if person.name.count > 0 {
                         Text(person.name.prefix(1))
                             .fontWeight(.bold)
+                    } else if person.flag != nil {
+                        Text(person.flag ?? "")
                     } else {
                         Text("?")
                     }

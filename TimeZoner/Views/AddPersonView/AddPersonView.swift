@@ -21,7 +21,7 @@ struct AddPersonView: View {
     
     @State var showingZonePicker: Bool = false
     
-    let imageStore = ImageStore()
+    @ObservedObject var imageStore = ImageStore()
     @State var image: UIImage?
     @State var showingImagePicker: Bool = false
     
@@ -90,12 +90,6 @@ struct AddPersonView: View {
     func addPhoto(uiImage: UIImage) -> Void {
         image = uiImage.scaleImage(toSize: CGSize(width: 30, height: 30)) 
     }
-    
-//    func autoFlagPicker() {
-//        if let cityName = TZid.split(separator: "/").last {
-//            // TO DO: find a way of converting city name into country and getting the country flag from the flags dictionary
-//        }
-//    }
 }
 
 struct AddPersonView_Previews: PreviewProvider {
