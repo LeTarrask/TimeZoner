@@ -31,9 +31,9 @@ struct PersonCircle: View {
                 .opacity(0.5)
             
             if (person.imagePath != nil) {
-                Image(uiImage: UIImage(contentsOfFile: person.imagePath!)!)
-                    .frame(width: 25, height: 25, alignment: .center)
-                    .clipShape(Circle())
+//                Image(uiImage: UIImage(contentsOfFile: person.imagePath!)!)
+//                    .frame(width: 25, height: 25, alignment: .center)
+//                    .clipShape(Circle())
             } else {
                 ZStack {
                     Circle()

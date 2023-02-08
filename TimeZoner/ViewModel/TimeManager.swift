@@ -12,8 +12,8 @@ class TimeManager: ObservableObject {
     
     static let shared = TimeManager()
     
-    private init() {
-        
+    init() {
+        load()
     }
     
     /// Documents Folder

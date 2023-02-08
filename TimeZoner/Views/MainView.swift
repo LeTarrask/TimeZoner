@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var manager: TimeManager = TimeManager.shared
+    
     @State var addPerson: Bool = false
     
     var body: some View {
@@ -28,14 +29,14 @@ struct MainView: View {
             
             Spacer()
             
-            Watch(manager: manager)
+            Watch()
                 .edgesIgnoringSafeArea(.all)
                 .sheet(isPresented: $addPerson, content: {
-                    AddPersonView(manager: manager)
+                    AddPersonView()
                 })
             
             Spacer()
-        }.onAppear(perform: manager.load)
+        }
     }
 }
 
