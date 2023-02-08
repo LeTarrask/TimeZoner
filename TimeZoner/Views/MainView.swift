@@ -13,29 +13,37 @@ struct MainView: View {
     @State var addPerson: Bool = false
     
     var body: some View {
-        VStack {
-            HStack {
-                Button("clear") {
-                    manager.clear()
+        NavigationStack {
+            VStack {
+                HStack {
+                    Button("clear") {
+                        manager.clear()
+                    }
+                    
+                    Spacer()
+                    
+                    Button("Add Person") {
+                        addPerson.toggle()
+                    }
+                    .padding()
                 }
                 
                 Spacer()
                 
-                Button("Add Person") {
-                    addPerson.toggle()
+                Watch()
+                    .edgesIgnoringSafeArea(.all)
+                    .sheet(isPresented: $addPerson, content: {
+                        AddPersonView()
+                    })
+                
+                Spacer()
+                
+                HStack {
+                    NavigationLink("Manage Timezones") {
+                        PersonsManagementView()
+                    }
                 }
-                .padding()
             }
-            
-            Spacer()
-            
-            Watch()
-                .edgesIgnoringSafeArea(.all)
-                .sheet(isPresented: $addPerson, content: {
-                    AddPersonView()
-                })
-            
-            Spacer()
         }
     }
 }

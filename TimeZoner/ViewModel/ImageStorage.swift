@@ -16,6 +16,8 @@ class ImageStore: ObservableObject {
         return paths[0]
     }
     
+    static let shared = ImageStore()
+    
     // MARK: - stores the image file in app memory and returns an image name
     func saveToUserDir(image: UIImage) -> String? {
         let imageName = UUID().uuidString
