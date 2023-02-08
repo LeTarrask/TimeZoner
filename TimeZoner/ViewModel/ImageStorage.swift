@@ -19,16 +19,16 @@ class ImageStore: ObservableObject {
     // MARK: - stores the image file in app memory and returns an image name
     func saveToUserDir(image: UIImage) -> String? {
         let imageName = UUID().uuidString
-        
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 0, height: 0))
 
-        let resizedImage = renderer.image { (context) in
-            image.draw(in: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
-        }
-
-        if let data = resizedImage.pngData() {
+        if let data = image.resizeWithWidth(width: 100)?.pngData() {
             let filename = getDocumentsDirectory().appendingPathComponent(imageName)
-            try? data.write(to: filename)
+            do {
+                try data.write(to: filename)
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            print("Saved image \(imageName) on \(filename)")
             return imageName
         } else {
             print("Failed storing image to User Directory")
@@ -44,5 +44,19 @@ class ImageStore: ObservableObject {
             return nil
         }
         return image
+    }
+}
+
+extension UIImage {
+    func resizeWithWidth(width: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
     }
 }

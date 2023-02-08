@@ -10,6 +10,12 @@ import SwiftUI
 class TimeManager: ObservableObject {
     @Published var persons: [Person] = []
     
+    static let shared = TimeManager()
+    
+    private init() {
+        
+    }
+    
     /// Documents Folder
     private static var documentsFolder: URL {
         do {
@@ -59,5 +65,11 @@ class TimeManager: ObservableObject {
                 fatalError("Can't write Persons to file")
             }
         }
+    }
+    
+    // for testing purposes, may be refactored to be useful
+    func clear() {
+        persons = []
+        save()
     }
 }

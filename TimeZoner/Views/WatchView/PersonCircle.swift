@@ -31,7 +31,7 @@ struct PersonCircle: View {
                 .opacity(0.5)
             
             if (person.imagePath != nil) {
-                Image(person.imagePath!)
+                Image(uiImage: UIImage(contentsOfFile: person.imagePath!)!)
                     .frame(width: 25, height: 25, alignment: .center)
                     .clipShape(Circle())
             } else {

@@ -10,7 +10,7 @@ import SwiftUI
 struct Watch: View {
     @State var date: Date = Date()
     
-    @ObservedObject var manager: TimeManager
+    @ObservedObject var manager = TimeManager.shared
         
     var body: some View {
         let calendar = Calendar.current
@@ -112,7 +112,6 @@ struct Watch: View {
 
 struct Watch_Preview: PreviewProvider {
     static var previews: Watch {
-        let manager = TimeManager()
         let testPersons: [Person] = [
             Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇵🇹"),
             Person(name: "Daniel", timezone: TimeZone(identifier: "America/Sao_Paulo") ?? TimeZone(identifier: "GMT")!, color: .blue),
@@ -127,9 +126,11 @@ struct Watch_Preview: PreviewProvider {
             Person(name: "Daniel", timezone: TimeZone(identifier: "Pacific/Wallis") ?? TimeZone(identifier: "GMT")!, color: .blue, flag: "🇨🇺")
         ]
         
-        manager.persons = testPersons
-        manager.sortPersons()
+        let watch = Watch()
         
-        return Watch(manager: manager)
+        watch.manager.persons = testPersons
+        watch.manager.sortPersons()
+        
+        return watch
     }
 }

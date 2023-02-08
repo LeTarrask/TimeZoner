@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PersonsManagementView: View {
-    @ObservedObject var manager: TimeManager
+    @ObservedObject var manager = TimeManager.shared
     
     @State private var searchText = ""
     
@@ -63,7 +63,6 @@ struct PersonsManagementView: View {
 
 struct PersonsManagementView_swift_Previews: PreviewProvider {
     static var previews: some View {
-        let manager = TimeManager()
         let testPersons: [Person] = [
             Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇵🇹"),
             Person(name: "Daniel", timezone: TimeZone(identifier: "America/Sao_Paulo") ?? TimeZone(identifier: "GMT")!, color: .blue),
@@ -78,10 +77,12 @@ struct PersonsManagementView_swift_Previews: PreviewProvider {
             Person(name: "Daniel", timezone: TimeZone(identifier: "Pacific/Wallis") ?? TimeZone(identifier: "GMT")!, color: .blue, flag: "🇨🇺")
         ]
         
-        manager.persons = testPersons
+        let personView = PersonsManagementView()
         
-        manager.sortPersons()
+        personView.manager.persons = testPersons
         
-        return PersonsManagementView(manager: manager)
+        personView.manager.sortPersons()
+        
+        return personView
     }
 }

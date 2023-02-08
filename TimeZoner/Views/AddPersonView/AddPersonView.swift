@@ -12,7 +12,7 @@ import SwiftUI
 struct AddPersonView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @ObservedObject var manager: TimeManager
+    @ObservedObject var manager = TimeManager.shared
     
     @State private var name: String = ""
     @State private var color: Color = .red
@@ -94,7 +94,7 @@ struct AddPersonView: View {
 
 struct AddPersonView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPersonView(manager: TimeManager())
+        AddPersonView()
     }
 }
 

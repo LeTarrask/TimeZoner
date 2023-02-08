@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var manager: TimeManager = TimeManager()
+    @ObservedObject var manager: TimeManager = TimeManager.shared
     @State var addPerson: Bool = false
     
     var body: some View {
         VStack {
             HStack {
+                Button("clear") {
+                    manager.clear()
+                }
+                
                 Spacer()
                 
                 Button("Add Person") {
