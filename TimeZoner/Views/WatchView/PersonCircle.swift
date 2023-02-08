@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PersonCircle: View {
+    @ObservedObject var imgStore = ImageStore.shared
+    
     /// Generates the external circle with the persons avatar, and positions it according to the timezone
     let multiplier = CGFloat.pi/6
     
@@ -31,9 +33,10 @@ struct PersonCircle: View {
                 .opacity(0.5)
             
             if (person.imagePath != nil) {
-//                Image(uiImage: UIImage(contentsOfFile: person.imagePath!)!)
-//                    .frame(width: 25, height: 25, alignment: .center)
-//                    .clipShape(Circle())
+                Image(uiImage: imgStore.loadImage(person.imagePath!)!)
+                    .resizable()
+                    .frame(width: 25, height: 25, alignment: .center)
+                    .clipShape(Circle())
             } else {
                 ZStack {
                     Circle()

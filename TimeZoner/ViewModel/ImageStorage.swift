@@ -22,7 +22,7 @@ class ImageStore: ObservableObject {
     func saveToUserDir(image: UIImage) -> String? {
         let imageName = UUID().uuidString
 
-        if let data = image.resizeWithWidth(width: 100)?.pngData() {
+        if let data = image.resizeWithWidth(width: 250)?.pngData() {
             let filename = getDocumentsDirectory().appendingPathComponent(imageName)
             do {
                 try data.write(to: filename)
@@ -39,7 +39,7 @@ class ImageStore: ObservableObject {
     }
     
     // MARK: - reloads the image file from app memory and returns it
-    func loadImage(imageName: String) -> UIImage? {
+    func loadImage(_ imageName: String) -> UIImage? {
         let filename = getDocumentsDirectory().appendingPathComponent(imageName)
 
         guard let imageData = try? Data(contentsOf: filename), let image = UIImage(data: imageData) else {
