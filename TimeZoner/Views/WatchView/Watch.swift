@@ -7,31 +7,6 @@
 
 import SwiftUI
 
-
-struct Watch_Preview: PreviewProvider {
-    static var previews: Watch {
-        let manager = TimeManager()
-        let testPersons: [Person] = [
-            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇵🇹"),
-            Person(name: "Daniel", timezone: TimeZone(identifier: "America/Sao_Paulo") ?? TimeZone(identifier: "GMT")!, color: .blue),
-            Person(name: "Alex", timezone: TimeZone(identifier: "Europe/Lisbon") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb", flag: "🇨🇺"),
-            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/Argentina/Catamarca") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇨🇺"),
-            Person(name: "Daniel", timezone: TimeZone(identifier: "Asia/Amman") ?? TimeZone(identifier: "GMT")!, color: .blue, flag: "🇵🇹"),
-            Person(name: "Alex", timezone: TimeZone(identifier: "Asia/Phnom_Penh") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb"),
-            Person(name: "SambaRock", timezone: TimeZone(identifier: "Antarctica/Palmer") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇨🇺"),
-            Person(name: "Daniel", timezone: TimeZone(identifier: "Europe/Budapest") ?? TimeZone(identifier: "GMT")!, color: .blue, flag: "🇵🇹"),
-            Person(name: "Alex", timezone: TimeZone(identifier: "Indian/Antananarivo") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb"),
-            Person(name: "SambaRock", timezone: TimeZone(identifier: "Indian/Maldives") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇵🇹"),
-            Person(name: "Daniel", timezone: TimeZone(identifier: "Pacific/Wallis") ?? TimeZone(identifier: "GMT")!, color: .blue, flag: "🇨🇺")
-        ]
-        
-        manager.persons = testPersons
-        manager.sortPersons()
-        
-        return Watch(manager: manager)
-    }
-}
-
 struct Watch: View {
     @State var date: Date = Date()
     
@@ -135,7 +110,26 @@ struct Watch: View {
     }
 }
 
-
-
-
-
+struct Watch_Preview: PreviewProvider {
+    static var previews: Watch {
+        let manager = TimeManager()
+        let testPersons: [Person] = [
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/New_York") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇵🇹"),
+            Person(name: "Daniel", timezone: TimeZone(identifier: "America/Sao_Paulo") ?? TimeZone(identifier: "GMT")!, color: .blue),
+            Person(name: "Alex", timezone: TimeZone(identifier: "Europe/Lisbon") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb", flag: "🇨🇺"),
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "America/Argentina/Catamarca") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇨🇺"),
+            Person(name: "Daniel", timezone: TimeZone(identifier: "Asia/Amman") ?? TimeZone(identifier: "GMT")!, color: .blue, flag: "🇵🇹"),
+            Person(name: "Alex", timezone: TimeZone(identifier: "Asia/Phnom_Penh") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb"),
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "Antarctica/Palmer") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇨🇺"),
+            Person(name: "Daniel", timezone: TimeZone(identifier: "Europe/Budapest") ?? TimeZone(identifier: "GMT")!, color: .blue, flag: "🇵🇹"),
+            Person(name: "Alex", timezone: TimeZone(identifier: "Indian/Antananarivo") ?? TimeZone(identifier: "GMT")!, color: .green, imagePath: "thumb"),
+            Person(name: "SambaRock", timezone: TimeZone(identifier: "Indian/Maldives") ?? TimeZone(identifier: "GMT")!, color: .red, imagePath: "samba", flag: "🇵🇹"),
+            Person(name: "Daniel", timezone: TimeZone(identifier: "Pacific/Wallis") ?? TimeZone(identifier: "GMT")!, color: .blue, flag: "🇨🇺")
+        ]
+        
+        manager.persons = testPersons
+        manager.sortPersons()
+        
+        return Watch(manager: manager)
+    }
+}
