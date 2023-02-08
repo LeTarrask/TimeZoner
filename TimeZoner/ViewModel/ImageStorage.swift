@@ -19,7 +19,14 @@ class ImageStore {
     // MARK: - stores the image file in app memory and returns an image name
     func saveToUserDir(image: UIImage) -> String? {
         let imageName = UUID().uuidString
-        if let data = image.pngData() {
+        
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 0, height: 0))
+
+        let resizedImage = renderer.image { (context) in
+            image.draw(in: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
+        }
+
+        if let data = resizedImage.pngData() {
             let filename = getDocumentsDirectory().appendingPathComponent(imageName)
             try? data.write(to: filename)
             return imageName
