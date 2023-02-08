@@ -44,11 +44,11 @@ struct PersonCircle: View {
                         .foregroundColor(.white)
                         .frame(width: 25, height: 25, alignment: .center)
                     
-                    if person.name.count > 0 {
+                    if person.flag != nil {
+                        Text(person.flag ?? "")
+                    } else if person.name.count > 0 {
                         Text(person.name.prefix(1))
                             .fontWeight(.bold)
-                    } else if person.flag != nil {
-                        Text(person.flag ?? "")
                     } else {
                         Text("?")
                     }

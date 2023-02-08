@@ -64,7 +64,7 @@ struct AddPersonView: View {
                                 person.imagePath = path
                             }
                             
-                            if flag.count != 0 {
+                            if flag != "" {
                                 person.flag = flag
                             }
                            
